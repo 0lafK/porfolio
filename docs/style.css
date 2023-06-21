@@ -426,10 +426,10 @@ footer{
       font-size: 30px;
     }
    
-    .cont2 {
-        width: 90%;
-        margin: 20px auto;
+    .myButton a {
+      font-size: 40px;
     }
+   
     footer {
         margin-bottom: -80px;
     }
