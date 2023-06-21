@@ -8,6 +8,7 @@ body {
     font-family: 'Bebas Neue', sans-serif;
     max-width: 100%;
     overflow-x: none;
+    height: 100%;
     
 }
 body::-webkit-scrollbar{
@@ -23,16 +24,16 @@ header {
     height: 500px;
     margin-top: 0;
     padding-top: 0;
-    position: relative; /* Dodaj pozycjonowanie względem rodzica */
+    position: relative; 
   }
   
   header h1 {
     color: #FFE194;
     font-size: 96px;
     margin: 0;
-    position: absolute; /* Dodaj pozycjonowanie absolutne */
-    bottom: 0; /* Ustaw dolną krawędź na 0 */
-    left: 20px; /* Ustaw lewą krawędź na 20px (lub inną wartość, jeśli jest to wymagane) */
+    position: absolute; 
+    bottom: 0; 
+    left: 20px; 
   }
 
   .navbar {
@@ -50,7 +51,7 @@ header {
   }
 
   .navbar.scrolled {
-    background-color: #4C4C6D; /* Nowy kolor tła po przewinięciu */
+    background-color: #4C4C6D;
   }
 
   .navbar ul {
@@ -113,6 +114,7 @@ header {
     height: auto;
 }
 .me img {
+  background-size: cover;
     position: relative;
     width: 460px;
     height: 460px;
@@ -145,14 +147,14 @@ width: 100%;
     gap: 80px;
     width: 80%;
     margin: auto;
-    opacity: 0; /* Ustaw domyślną wartość przezroczystości na 0 */
-    transform: translateX(100%); /* Przesuń element poza obszar widoczny */
-    transition: opacity 3s, transform 2s; /* Dodaj przejście animacji */
+    opacity: 0;
+    transform: translateX(100%);
+    transition: opacity 3s, transform 2s; 
   }
   
   .skills.animate {
-    opacity: 1; /* Ustaw przezroczystość na 1 po dodaniu klasy "animate" */
-    transform: translateX(0); /* Przesuń element w pozycję widoczną */
+    opacity: 1;
+    transform: translateX(0); 
   }
   
   
@@ -189,81 +191,16 @@ width: 100%;
   align-items: center;
 }
 .myButton:hover {
-  transform: scale(1.1);
-  transition: 1s;
+  transform: translatey(-20px);
+  scale: 1.1;
+  transition: all 1s;
+  
 }
-.closeButton {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  cursor: pointer;
-  color: white;
-  background-color: #4C4C6D;
-  border: none;
-  border-radius: 50%;
-}
-.myWindow {
-  display: none;
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  width: 80%;
-  background-color: white;
-  color: #4C4C6D;
-  z-index: 100;
-  border: #1B9C85 3px solid;
-  border-radius: 20px;
-  box-shadow: 0 0 10px #1B9C85(255, 145, 79, 0.8);
-  overflow: auto;
-  box-sizing: border-box;
-  height: 80%;
-  padding-left: 10px;
-  animation: openAnimation 0.8s ease forwards;
-}
-@keyframes openAnimation {
-  0% {
-    opacity: 0;
-    transform: translate(-50%, -50%) scale(0.8);
-  }
-  100% {
-    opacity: 1;
-    transform: translate(-50%, -50%) scale(1);
-  }
-}
-.myWindow::-webkit-scrollbar{
-  width: 0;
-}
-.name {
-  display: flex;
-  font-size: 40px;
-  justify-content: center;
-  margin-top: 20px;
-}
-
-.main {
-  display: flex;
-  justify-content: space-around;
-  align-items: center;
-  width: 80%;
-  flex-wrap: wrap;
-  margin: 0 auto;
-}
-.preview img {
-  display: flex;
-  margin: 0 auto;
-  justify-content: center;
-  align-items: center;
-  transform: scale(0.8);
-}
-
-.case img {
-  display: flex;
-  width: 100%;
-  position: relative;
-  left: 0;
-  bottom: 0;
-
+.myButton a {
+   text-decoration: none;
+   color: #FFE194;
+   font-family: 'Bebas Neue', sans-serif;
+   font-size: 64px;
 }
 
 footer{
@@ -271,6 +208,7 @@ footer{
     color: #4C4C6D;
     padding-bottom: 40px;
     margin-top: 100px;
+    bottom: 0;
 
 }
 #contact h1 {
@@ -295,28 +233,25 @@ footer{
     background-color: #4C4C6D;
     margin: 5px;
   }
-.cont2 {
-    display: flex;
-    position: relative;
-    flex-direction: column;
-    left: 0;
-    top: 0;
-    width: 40%;
-    height: 80%;
-    margin-left: 20px;
-}
 .mail {
+  display: flex;
     font-size: 36px;
+    justify-content: center;
+    align-items: center;
 }
-.link {
-    flex-direction: column;
-    font-size: 24px;
+.link  {
+  text-decoration: none;
+  font-size: 36px;
+  color: #4C4C6D;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  align-items: center;
 }
 .link a {
-    text-decoration: none;
-    color: #4C4C6D;
-    width: 100%;
-    gap: 8px;
+  text-decoration: none;
+  font-size: 36px;
+  color: #4C4C6D;
 }
 @media screen and (max-width: 900px) {
     body {
@@ -411,9 +346,6 @@ footer{
       font-size: 24px;
     }
   
-    .link {
-      font-size: 18px;
-    }
   }
   @media screen and (max-width: 400px) {
     body {
@@ -468,28 +400,32 @@ footer{
       height: 800px;
   }
   .skills {
-    justify-content: center;
-    align-items: center;
-    gap: 0px;
-    width: 80%;
-    
-  }
-  .skills img {
-      scale: 0.5;
-      gap: 0px;
-      justify-content: center;
-      padding: 0px;
-      margin: 0;
-      
-  }
+  display: flex;
+  position: relative;
+  justify-content: center;
+  align-items: center;
+  gap: -20px;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+
+.skills img {
+  display: flex;
+  justify-content: center;
+  width: 60%;
+  transform: scale(0.4);
+  margin: 0 -40px;
+}
     #projects {
-        margin-top: 150px;
+        margin-top: -180px;
         font-size: 24px;
         line-height: 44px;
     }
-    .preview {
-      transform: scale(0.6);
+    #projects h1 {
+      font-size: 30px;
     }
+   
     .cont2 {
         width: 90%;
         margin: 20px auto;
@@ -499,12 +435,10 @@ footer{
     }
     .divider {
         font-size: 18px;
+        width: 100%;
     }
     .mail {
         font-size: 18px;
-    }
-    .link {
-        font-size: 14px;
     }
 }
 

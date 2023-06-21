@@ -116,26 +116,3 @@ window.addEventListener('scroll', handleScroll);
 
 
 
-document.addEventListener('DOMContentLoaded', function() {
-  const myButtons = document.getElementsByClassName('myButton');
-  const myWindows = document.getElementsByClassName('myWindow');
-  const closeButtons = document.getElementsByClassName('closeButton');
-  let activeWindow = null;
-
-  for (let i = 0; i < myButtons.length; i++) {
-    myButtons[i].addEventListener('click', function() {
-      const window = this.nextElementSibling;
-      if (activeWindow) {
-        activeWindow.style.display = 'none';
-      }
-      window.style.display = 'block';
-      activeWindow = window;
-    });
-
-    closeButtons[i].addEventListener('click', function() {
-      const window = this.parentElement;
-      window.style.display = 'none';
-      activeWindow = null;
-    });
-  }
-});
